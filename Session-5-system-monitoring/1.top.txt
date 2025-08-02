@@ -1,0 +1,46 @@
+Top displays the information:
+CPU Usage
+Memody Usage
+Running Task and processes
+Load Average
+Uptime
+User Sessions
+
+It updates the display after every few seconds which allows you to do live
+monitoring.
+
+Process table
+-----------------
+PId: Process Id
+Process User: Owner for the Process
+PR: Priority (20)
+NI: Nice Value (-10)
+VIRT/RES/SHR - Memory Usage
+S -- state (R-Running, S- Sleeping)
+%CPU & %Mem: Usage Percentage
+TIME+ Total CPU time used 
+COMMAND: Command name or path
+
+
+To work with Top commands
+-----------------------------------
+press Key P (Sort by CPU usage)-- this is by default
+PRESS KEY M (sort by memory usage)
+T sort by process time
+k press -- type process ID send the singnal and it will kill process
+press r to renice a process
+q - quit it
+h - get help
+1 - to show all CPU cores individually
+
+Check top command for 1 process
+---------------------------------------
+top -p processID
+
+for user: top -u sonam
+
+runn in batch mode and print first 20 lines:
+top -b -n 1 | head -20
+
+Disk Usage:
+sudo du -ah /var | sort -rh | head -20
