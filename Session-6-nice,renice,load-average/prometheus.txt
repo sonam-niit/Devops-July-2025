@@ -1,0 +1,49 @@
+Download Promethues from this Link
+https://prometheus.io/download/
+
+extract tar file and open it in terminal or wsl.
+
+edit  prometheus.yml file using nano command:
+ nano prometheus.yml
+
+add below code:
+# my global config
+global:
+  scrape_interval: 15s
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+
+save the file and run this command:
+./prometheus --config.file=prometheus.yml
+
+once its executed Successfully you can see in terminal
+msg="Server is ready to receive web requests."
+
+check server output: http://localhost:9090/query
+
+To Setup a node exporter edit prometheus.yml file as below
+
+# my global config
+global:
+  scrape_interval: 15s
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  - job_name: "node"
+    static_configs:
+      - targets: ["localhost:9100"]
+
+save and then restart the prometheus again
+
+means stop using ctrl+c and then run the same command again.
+./prometheus --config.file=prometheus.yml
+
+to see the available targets
+localhost:9090/targets
+(you can see 2 targets 1 for node and 1 for prometheus)
+
+click on prometheus metrics links to get the response in JSON.

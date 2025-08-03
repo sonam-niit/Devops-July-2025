@@ -1,0 +1,10 @@
+when you run any file or any proces by default
+process priority is 20
+and nice value is 0
+-------------------------------------
+nice and renice we can use to update the priority of any process
+
+nice we can use to change the priority at the time of process starts
+
+renice we can use after process start to change priority
+

@@ -1,0 +1,17 @@
+sar command in linux is powerful tool used to collect, report and
+save system activity.
+
+its a part of sysstat package.
+
+-- Report CPU, memory, IO, SWAP, network usage and many more..
+-- can display real time data , historical data
+    (/var/log/sa/)
+-- find out performance bottlenecks.
+
+CPU Usage: sar -u 1 5
+--dispalys CPU usage for every second 5 times
+Memory Usage: sar -r 1 5
+Swap: sar -S 1 5
+Network: sar -n DEV 1 5
+IO stat: sar -b 1 5
+Historical: sar -u -f /var/log/sa/(memtion the file name)
