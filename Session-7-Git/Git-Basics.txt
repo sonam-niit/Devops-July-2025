@@ -1,0 +1,38 @@
+*************Git Fundamentals************
+
+1. Working Diretory: Its a folder where your code resides.
+
+2. Local Repository: Its a local folder located in your system which track
+your code files based on git VCS.
+when your folder becomes local repo?
+    when in your working directory you run command: git init
+    that inialized empty repo to that folder and
+    creates one hidden folder .git that keep track of your all files
+    so now its local Repository.
+
+3. By default when you create new files it will be in your working directory
+
+4. now when you run git add command then it added to your staging area.
+    staging means index it.
+
+5. when you commit it added to your local Repository.
+
+6. remote Repository: its a folder which is online which can be private or public as per 
+organizations req. This link you can share for access to others.
+    remote repo we can create on some online DVCS like BitBucket/ Github 
+
+How to Start working with this?
+
+1. Download Git to your system.
+for Linux users can Download using sudo apt install git
+
+2. Windows user: you can Download one git software directly from browser and you can install.
+
+https://git-scm.com/downloads
+
+download git install the same: once installed successfully check version.
+
+open normal cmd: git --version
+or else right click anywhere and open gitbash: git --version
+
+Git Bash is the bash terminal provided by Git itself to run git commands.

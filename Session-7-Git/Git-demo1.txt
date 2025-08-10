@@ -1,0 +1,132 @@
+Let's Create one folder to understand Git Basics.
+
+open Gitbash where you want to open to create your project.
+create folder: mkdir sample
+move to the folder: cd sample
+Let's create file: echo "Hello From Git...!" > file.txt
+check file created or not: ls
+let's make this as github repo: git init
+to verify: ls -a (you can see .git hidden folder created)
+let's check the Git status: git status
+now you can see one file is untracked to track run add command.
+so: git add file.txt
+then again check status: git status (you can see file tracking started)
+to unstage: git rm --cached file.txt (it will removed from tracking)
+git status (it will look like untracked)
+stage it: git add file.txt
+verify the status: git status 
+make some changes to this file and then save
+-- git status (you can see modified changes not staged)
+-- to remove that modification: git restore file.txt
+(it will remove extra changes from file and keep only staged content)
+
+let's make some changes again.
+-- echo "another line added">>file.txt
+(> will create new file or override the existing file
+>> will create new file if exist then update the file)
+
+-- check status again : git status
+-- stage it -- git add file.txt
+
+Let's commit: 
+    git commit -m "feature1 completed"
+
+** If your are doing this for the very first time may be you can see the identity error
+Git wants to know who you are??
+
+for that we required our account on Github to tell your identity to Git.
+
+Open Github.com and create account.
+
+for setting up configuration:
+
+git config --global user.name "sonam-niit"
+git config --global user.email "sonam@gmail.com"
+
+git config --global --list
+(if you can see your config means its configured)
+
+Now try to commit again:
+    git commit -m "feature1 completed"
+
+    then check the commit status: git log
+to see comments in oneline: git log --oneline
+
+Now to push them on Remote Repo: go to github account
+click new --> create new repo -- give repo name -- description -- create
+
+Once repo created  now again go back to your bash.
+
+change master branch to main: git branch -M main
+
+To tell local repo to push your code to remote we need to set remote Origin:
+
+git remote add origin https://github.com/sonam-niit/sample-git-demo.git
+
+once origin set push: git push -u origin main
+(-u for setting up upstream branch)
+
+this you need to set once and then when you do git push
+it will push to the main branch.
+
+when you run push command you need authentication
+select browser authentication and then it will redirect you to browser
+enter your credentials once it is authenticated it will push codes into remote repo.
+
+Now let's directly go to your repo and click on create read me
+
+add below code (just dummy code)
+--------------------------------------------
+# First Sample Project
+
+## Basic Git command Exection
+
+#### Stage File
+```bash
+  git add file.txt
+```
+#### Commit file to Local Repository
+```bash
+  git commit -m "first commit"
+```
+
+just click on commit read commit message and verify and commit.
+
+Now your remote repo is one step ahead then local repo.
+If I create one more file to my local repo and try to push what happen?
+
+echo "testing file" > file2.txt
+
+git add file2.txt
+
+git commit -m "another file added"
+
+git push
+
+(here you will see some error because both repo not at same commit level)
+
+to make them level run below command.
+
+------------------------------------------------------------
+git fetch: just collect updates, don't touch your files
+-- download new commits, download new branches and tags from remote repo
+-- updates your local tracking branches but doesn't merge them into working 
+branch
+-- your local files stay exactly as same
+
+git pull: fetch + merge
+-- first do fetch to get updates from remote
+-- then automatically merges the changes to current branch
+-- you working files may change immediately.
+
+After this if you push you can push the code.
+
+
+
+
+
+
+
+
+
+
