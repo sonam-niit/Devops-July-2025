@@ -1,0 +1,99 @@
+create folder:  git-merge-demo
+move to the folder and open via git bash
+initalize repo: git init 
+create file: echo "sample file">file1.txt
+stage it: git add file1.txt
+commit it: git commit -m "sample file added"
+check logs: git log
+change master branch to main: git branch -M main
+create new branch: git branch login
+check available branches: git branch
+    (* shows the current in the list of branches)
+switch branch: git switch login
+open project folder in VS code and then create index.html file
+add some sample code: use short cut (! enter)
+save the file and then stage it and commit it.
+list files in login branch
+switch branch to main and list files
+(you can see the diffrence like index.html is not present in main)
+if all code fine then we can merge to login branch from main
+git merge login 
+ls (you can see index.html here)
+check logs to see the commit status
+
+** if you create a new branch at this level then already your branch will point the head
+that means if you switch to that branch then also all files reflected to your branch.
+
+git switch -c register (create the branch as well as switch to that branch)
+git log (you can see head point main,register at same level)
+ls (you can see all files reflecting)
+
+for deleting the branch 
+move to the main branch: git switch main 
+git branch -d register
+
+************************************************
+Soft Reset : by default reset command executes soft reset
+means it will change the head pointer to the one whihc is given
+means delete the commit but keep the code in working directory
+
+in Hard Reset the code will be removed from working directory as well
+
+git log --oneline and copy the hashcode where you want to move
+
+git reset 45df7ae (i will be moved to that commit stage)
+
+the same above command if you do with --hard flag it will
+remove the file2.txt file from working directory
+
+
+create one file: echo "sample new">file2.txt
+stage it commit it
+reset with hashcode (put the previous commit hashcode)
+
+check ls (you can see the file in working directory)
+git status
+again stage it
+commit it 
+now do hard reset and then check ls
+
+************* Branch Conflict *****************
+let's solve bug in index.html so i am creating a branch named bugfix
+
+git switch -c bugfix
+
+edit index.html as per the requirement
+
+git add index.html
+git commit -m "bug fixed in index.html"
+
+git switch main
+edit index.html here as well.
+stage it (git add .)
+commit it (git commit -m "updated index")
+
+git merge (it should conflict)
+edit by VS code or else you can open the file and resolve manually (open conflict file
+keep the changes that you want--save it -- stage it-- commit again)
+
+When you merge main with bugfix, bigfix code taken to the main code for merge
+that doesn't mean bugfix and main branch will be at same head pointer.
+
+means main branch is ahead of bug fix branch after merge
+
+to take them at same level no need to again go to bugfix branch and merge again but we
+can use below command
+
+***********************************************************
+Git Rebase: way to move or combine commits from one branch to
+another. Its mostly used to keep your commit history clear and linear.
+
+git switch bugfix
+git rebase main (now both the branch at same level)
+
+-- Squash commits into one
+git rebase -i HEAD~3
+(Squash, reorder or edit your last 3 commits)
+
+
+

@@ -1,0 +1,35 @@
+one team leader create repo with readme and gitignore file
+
+once its created you can send the project link to your team members
+
+they will clone the repository.
+
+git clone repo-link
+
+----------------------------------------------
+
+go to repo settings --> colloborator
+add People add your team mate github username
+find him/her and send the invite for collobaration
+
+once he/she will approve you cna start working with them.
+
+Team member 1 will create his own branch
+
+-- git switch -c member1
+(write your code or just create some files)
+-- stage it, commit it and push to your branch
+
+-- git push origin member1
+(you can check in your repo another branch created)
+
+From the github itself you can create pull req 
+send it to your leader that this feature completed
+
+you leader will review the same and complete the merge.
+
+once the merge done others can pull the mreged code.
+
+-- git pull 
+
+others can do the same thing again.
