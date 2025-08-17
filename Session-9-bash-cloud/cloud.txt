@@ -42,3 +42,44 @@ launch instance.
 
 you can click on instance ID and check instance status
 public and private IPs too.
+
+How to connect with this Instance?
+
+option 1: Direct connect
+    select instance and you can see connect option on the top.
+    click on it.
+    on the first tab EC2 instance connect option 
+    scroll down and at last right botton corner you can see connect button
+    click on that.
+
+    now lets setup one application
+    sudo yum update -y
+    sudo yum install nginx -y
+    sudo systemctl start nginx
+    sudo systemctl enable nginx
+    sudo systemctl status nginx
+    (if status is running open public ip in browser and check
+    default page of nginx must be running)
+
+    now move to the default location of nginx index.html file
+    cd /usr/share/nginx/html
+    sudo nano index.html
+
+    save it and refresh your browser.
+
+Option 2: connect with SSH client
+
+    copy the key file which is downloaded by creating instance
+    copy it at some safe place
+    created folder named cloud and paste key there.
+
+    one it in cmd and then type wsl.
+
+    then check ls command and see key is available or not.
+    then set permission: chmod 400 "linuxkey.pem"
+
+    run ssh command: ssh -i "linuxkey.pem" ec2-user@ec2-3-90-0-213.compute-1.amazonaws.com
+
+    (you can copy commands from instance --> connect --> 3rd tab SSH client)
+
+    in case if you are getting permission issue run ssh command with sudo

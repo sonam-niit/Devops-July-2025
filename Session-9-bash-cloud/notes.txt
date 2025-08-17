@@ -1,0 +1,21 @@
+Shell??
+-------------------
+shell is a program that takes commands from the user and gives 
+then to the OS to execute.
+
+-- It is a CLI :: command line interpreter.
+
+Examples of Shell??
+-- sh --> Bourne Shell (original Unix Shell)
+-- bash (linux default)
+-- zsh, ksh etc..
+
+shell is the environment in which your commands/scripts run.
+
+**** Bash Script ???
+it is a simple text file containing sequence of command
+which starts with she bang (#!/bin/bash) bash shell.
+
+save it with .sh extention and execute it.
+
+Bash is the script which is an automation of shell commands.
