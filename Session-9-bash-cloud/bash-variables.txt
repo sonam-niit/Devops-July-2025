@@ -1,0 +1,18 @@
+In Bash when you declare variables all variables are treated as String
+
+if you use them in arithmetic $(()) then only it will concidered as number
+
+No Spaces around = means 
+    name = "sonam" is incorrect syntax
+
+Access variables using $ symbol
+Read the input from users using read command
+
+Special variables-
+
+$0 : Script name (file name)
+$1,$2,$3 ... --> arguments which passed with script
+$# : no of arguments
+$@ -> all arguments as a list
+$$ --> Process Id for that script when it executes
+$? --> Exit status of last command (0=success, 1 exited with some error)
