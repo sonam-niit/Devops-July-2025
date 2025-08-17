@@ -1,0 +1,44 @@
+EC2- elstic compute cloud 
+is the service provided by AWS which provides service for creating VM
+virtual machines which is called as instance.
+
+Like if i wnat to deploy my application on linux machine I can create
+Linux instance.
+
+If I want to set up an windows environment i can setup windows Instance.
+
+How to give that OS?
+
+for that OS setup we have AMI (amazon machine image)
+which helps you to set up that OS.
+
+on the top check region: select N.Virginia (us-east-1)
+
+Instances --> click on Launch Instance
+name of Instance --> LinuxMachine
+select Image --> Amazon linux (ligh weight)
+Instance Type --> t2.micro  (free ware)
+Key pair --> encryption key with the help of that we can connect
+to instance from local machine
+        --> create new key pair
+        --> name: linuxkey
+        --> RSA and type .pem
+        --> cretae key pair
+    once its created will be downloaded to your local system (keep safe)
+Network Settings: Firewall Settings
+    create security group
+    click on edit
+    give name of security group: linuxkey
+    set up rules to open some port for conectivity
+    1. ssh coming by default keep as it is
+    2. click on add security group rule
+        select HTTP 
+        source type: custome
+        Source: 0.0.0.0/0
+
+Storage keep 8 GB 
+Right hand side verify the summary and then click on
+launch instance.
+
+you can click on instance ID and check instance status
+public and private IPs too.
