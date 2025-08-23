@@ -1,0 +1,42 @@
+ping 8.8.8.8  --> ping google DNS
+ping 8.8.8.8 > output.log & --> run in the backgroound 
+and take results in to file
+
+ping 8.8.8.8 > output.log 2>&1 & 
+
+redirects standard error (fd2) to standard output (fd1)
+means any error outputs or regular logs both go into the same log file.
+
+0 = standard input 
+1 = standard output
+2 = standard error
+
+If you want to see the live logs
+tail -f output.log 
+
+To kill process find out process ID:
+ps aux | grep ping
+
+and then
+kill process-id
+
+____________________________________________________
+
+bg :: this commands continue proces in backgroound
+fg :: bring that from background to forground
+
+just start one process uisng sleep commands
+
+sleep 1000 (run this command and this is running as forgeround)
+
+stop uisng ctrl+z
+
+check jobs using jobs command
+
+not to take this in background use: bg %1
+means process taken to background
+
+now again to get that to forgeround use fg %1
+
+
+

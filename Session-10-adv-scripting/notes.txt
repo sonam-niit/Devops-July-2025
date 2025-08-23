@@ -1,0 +1,26 @@
+File Based Coditions
+
+-e file -> exist
+-f file --> regular file
+-d dir --> directory
+-r/-w/-x --> readable/ writable /executable
+
+tar command
+---------------------------
+tar -cf archive.tar file1 file2 dir/
+
+-c create
+-f file name
+
+tar -xf archive.tar
+
+-x : extract
+
+tar -tf archive.tar
+-t -> list
+
+
+tar -czf archive.tar.gz dir/
+-- -z --> using gzip
+
+-- -v --> verbose (show file names as they archived)
