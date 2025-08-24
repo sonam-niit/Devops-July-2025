@@ -1,0 +1,27 @@
+Regex: Regular Expression
+used to define Patterns for data validation.
+
+^[0-9]+$
+^ : starts with
+[0-9] : shows all digits from 0-9
++ : indicates 1 or more
+$ : indicates end of the Expression
+
+Email Pattern::
+^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$
+
+^ Match Beginning, $ match end of String
+
+^[A-Za-z0-9._%+-] -- username can be a combination of
+letters, numbers, _, %, -, +
+
++ means more than one letters and symbols can be used for username
+
+@ -> must contain @
+
+[A-Za-z0-9.-] --> domain part (letters, numbers, ., -)
+
+\. --> must contain . after domain
+
+[A-Za-z]{2,4}$ --> top level domain with min 2 and max 4 letters
+(com, org, in etc..)
