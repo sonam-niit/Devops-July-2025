@@ -1,0 +1,10 @@
+Write a Program to check given number is even or odd.
+Wrire a program to print first 100 even numbers.
+Write a program to take selling price and purchase price from User
+    calculate its profit or loss?
+    if profit then print profit and amount of profit
+    if loss then pront loss and amount of loss
+
+    sp=100, pp=60 --> result -- profit of 40
+    sp=100, pp=120 --> result -- loss of 20
+

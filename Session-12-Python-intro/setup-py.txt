@@ -1,0 +1,24 @@
+install python directly to your system by accessing official website 
+https://www.python.org/downloads/
+
+download and install directly to verify installation open cmd/terminal
+ -- python --version / python -V 
+with python you will get pip which is the package manager provided by python 
+to install and uninstall external packages to verify it 
+ -- python -m pip --version / python -m pip -V
+
+incase if you want to run pip command directly then you have to set env variables
+you need to access this location
+C:\Users\<your_username>\AppData\Local\Programs\Python\Python313\Scripts
+
+open system settings: advanced system settings -->Environment variables
+--> path --> click --> new --> paste path and then save 
+
+restrat or open new cmd terminal and the check
+    pip --version / pip -V
+
+Incase your are using WSL or Linux then use below commands for installation:
+sudo apt update -y 
+sudo apt install python3 python3-pip
+verify: python3 --version / python3 -V
+for pip: pip3 --version / pip3 -V 
