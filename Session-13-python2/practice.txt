@@ -1,0 +1,34 @@
+1. from your slides create code for server.py
+run the same and check output.
+
+2. create class Account with variables accNo,accholderName,balance
+   function:
+        __init__(self,accNo,accHolderName,balance)
+        display(self): provide details of Account
+        diposit(self,amount): update balance by adding amount
+        withdraw(self,amount): check if the sufficient balance available 
+            withdraw the amount and decrease balance
+            if no balance available then provide message.
+
+3. from slides again try to run Dod class code and get handon practice.
+
+4. from slides create Animal class
+    create Dog class which inherits Animal class property
+
+    create generic object of Animal 
+    create Dog object and see the out of speak method
+
+    Dog class overriding speak method so dog objetc will use its own method
+    its not using parent class method.
+
+5. from slides create demos for regex
+
+    match pattern
+    search pattern also for
+    findall and sub
+
+*** Whatever the programs I have shown to you
+do the practice for the same as well.
+
+    
+

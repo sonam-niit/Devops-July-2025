@@ -1,0 +1,17 @@
+class and object are the main pillers of OOPs 
+
+class is the structure of your code, with the help of class 
+we can create multiple objects. each object has its unique identity
+
+to initalize objects (construct) we can use
+__init__ method
+self is used to make your local variables to access them inside the class.
+
+so with each method you need to use self which is one parameter so using that
+you can use class level variables like id,name,marks
+
+to create object use class Name and pass values to its init method
+you can use other methods of class by using object name 
+dot operator and the method name
+
+stu1.display()
