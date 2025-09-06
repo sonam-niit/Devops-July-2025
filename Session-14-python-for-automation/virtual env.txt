@@ -1,0 +1,57 @@
+In python virtual environment is isolated environment which allows you
+to install and manage dependencies for diffrent projects.
+
+you can manage project packages seperately by avoiding conflicts.
+
+-- benefits
+keep packages isolated
+prevent from version conflicts
+for diffrent projects we can manage diffrent dependencies
+
+How to do that
+
+    python -m venv myenv
+
+it will create folder named myenv containing full isolated python environment
+
+Activate:
+    myenv\Scripts\activate
+
+once you run this script virtual environment is activated.
+
+now you can install dependencies here.
+pip install requests flask
+***************************************************************
+Incase If you are using wsl then activate must be under the bin folder.
+here use below command to activate:  source myenv/bin/activate
+
+for deactivate just type deactivate in bash.
+
+
+******** Advanced dependency management *********
+pipenv combining pip and virtual env for manage dependencies
+it keep tracks of your packagesin pipfile and pipenv.lock file
+it also simplifies dependency installation, version control and project sharing
+
+how to use?
+
+pip install pipenv
+
+then whenever you want to install any dependencies in virtual environment
+use below command: pipenv install requests
+
+it will setup up virtual environment and also you can see 2 files
+Pipfile and lock file
+
+now to use this environment use: pipenv shell
+
+if you run any command under the shell it will use virtual environment
+
+Let's Set up same in wsl
+-------------------------------------
+sudo apt update
+sudo apt install pipenv 
+once its installed check version: pipenv --version
+
+create virtual environment: pipenv install -r requirements.txt
+

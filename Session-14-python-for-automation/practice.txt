@@ -1,0 +1,27 @@
+******* Mini project: Command Line Calculator
+
+Create a command line Calc Using argparse
+3 arguments
+    1. num1 (type=float)
+    2. operator (choices= ["add","sub","mul"])
+    3. num2 (type=float)
+
+    ("num1",type=float,help="First Number")
+
+put logic:
+    args.operator == "add"
+        result= args.num1 + args.num2
+
+run script: py calc.py 45 mul 2
+
+
+******* Mini Project: text File Word Counter
+
+take only one argument which is file name
+
+    open file in read mode
+    read whole file
+    split line by space and count Word
+    take word length using length function
+
+include little bit of error handling incase if file not found
