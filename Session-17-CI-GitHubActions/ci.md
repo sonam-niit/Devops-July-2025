@@ -69,3 +69,32 @@ jobs:
               run: echo "Application deplyed successfully"
 ```
 
+- create one more file upder the workflows folder
+- sample.yml
+```yml
+name: 
+
+on:
+    push:
+        branches: [ main ]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: build app
+              run: echo "build done"
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: test app
+              run: echo "test done"
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: deploy app
+              run: echo "deploy done"
+              
+```
+- push and check the output
+- here build, test, deploy are the names of the job
