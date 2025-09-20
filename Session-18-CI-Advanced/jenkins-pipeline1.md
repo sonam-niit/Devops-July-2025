@@ -43,8 +43,8 @@ pipeline {
 }
 
 ```
-11. save it and click on build now
+11. save it and click on build now click on build icon #1
 12. check console output
-13. check stages
-14. check pipeline overview
+13. check pipeline steps
+14. check pipeline overview (here you can see stages)
 15. to edit again you can click on configure 
