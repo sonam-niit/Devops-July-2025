@@ -3,7 +3,7 @@ from email.mime.text import MIMEText
 
 def send_email(subject,body):
     send_email="<your_email_id>"
-    receiver_email="sonam_skills@pw.live"
+    receiver_email="<receiver_email_id>"
     password="<your_generated_app_password>"
     # google account : manage account
     # search for app-password

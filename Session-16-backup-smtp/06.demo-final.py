@@ -39,7 +39,7 @@ def send_notification(subject, body, recipient_email):
 
     with smtplib.SMTP('smtp.gmail.com', 587) as server:
         server.starttls()
-        server.login(sender_email, 'your_password')
+        server.login(sender_email, 'your_password') #App Password
         server.sendmail(sender_email, recipient_email, msg.as_string())
         print("Notification sent.")
 
@@ -57,3 +57,4 @@ if __name__ == "__main__":
     errors = parse_logs('D://PhysicsWalla/Devops-July/Session-16-backup-smtp/app.log')
     if errors:
         send_notification("Log Errors Detected", "\n".join(errors), "recipient@example.com")
+        print("Error Mail Send successfully!")
