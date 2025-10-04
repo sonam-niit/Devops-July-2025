@@ -2,11 +2,33 @@
 
 1. settings icon
 2. tools
-3. go to maven installtion
-4. select maven version
+3. go to maven installtion --> name it like "my maven"
+4. select maven version 
 5. add installer like apache
 
 - this will configure Maven from tools as well.
+
+# To use this tool in your pipeline use below in your script
+```groovy
+pipeline {
+    agent any
+    tools {
+        maven 'my maven' // Name from Global Tool Configuration
+    }
+    stages {
+        stage('Check java Version') {
+            steps {
+                echo 'Check java Version'
+                sh 'java -version'
+                
+                sh 'mvn -version'
+            }
+        }
+    }
+}
+
+```
+- so now this will your maven from configured tools not from the default settings of your system.
 
 # To Setup direct maven project not pipeline
 
