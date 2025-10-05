@@ -2,6 +2,12 @@
 
 **Setup JMETER using WSL**
 
+- to run jmeter required jdk as well use below commands
+```bash
+sudo apt update
+sudo apt install openjdk-17-jre -y
+java -version
+```
 - download binary files from  this location 
 - [Download](https://jmeter.apache.org/download_jmeter.cgi)
 - Extract the same
@@ -13,11 +19,18 @@
 *set Environment variables*
 
 ```bash
-echo 'export JMETER_HOME=~/jmeter' >> ~/ .bashrc
-echo 'export PATH=$JMETER_HOME/bin:$PATH' >> ~/ .bashrc
-source ~/ .bashrc
-
-## Verify JMETER Version
+# move to the bin folder
+echo 'export JMETER_HOME=~/jmeter' >> ~/.bashrc
+echo 'export PATH=$JMETER_HOME/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
+# Check version
 jmeter --version
+# Incase permission denied use below command
+chmod +x ~/jmeter/bin/jmeter
+# Check version again
 
+# now just run jmeter command 
+jmeter
+# it will start JMETER you can process with performace Testing
+# Tetsing Screenshorts Included in pdf file Please check
 ```
