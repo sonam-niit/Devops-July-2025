@@ -41,4 +41,8 @@ pytest --cov=fb_login test_fb_title.py #for perticular file coverage
 pytest --cov=fb_login --cov-report=html
 # it will create html folder you can open index.html in browser and check
 # overall coverage by file, by class etc...
+
+# for prev session 21 if you want to check coverage for all files
+pytest --cov  # check the output
+
 ```
