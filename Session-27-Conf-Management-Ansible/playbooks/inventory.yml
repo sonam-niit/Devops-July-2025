@@ -1,0 +1,13 @@
+all:
+  hosts:
+    server1:
+      ansible_host: <use DNS or public ip of your instance>
+      # add your instance DNS value
+      ansible_user: ubuntu 
+      # user name default ubuntu vm: ubuntu
+      # default for amazon Linux: ec2-user
+      ansible_ssh_private_key_file: ~/.ssh/ansiblekey.pem
+      # key with which you have created instance
+
+# ansible-inventory -i inventory.yml --list
+# verify inventory is correct or not

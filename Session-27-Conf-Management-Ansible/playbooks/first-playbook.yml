@@ -1,0 +1,17 @@
+- name: Sample Playbook run with Localhost
+  hosts: localhost
+  connection: local
+
+  tasks:
+  - name: Say hello
+    debug:
+      msg: "this is first Hello From Ansible"
+
+  - name: Another Task Demo
+    debug:
+      msg: "Sample Debug Message"
+  
+  - name: create Sample File
+    copy:
+      dest: /home/sonam/developers/demo.txt
+      content: "This file was created by Ansible on localhost"
