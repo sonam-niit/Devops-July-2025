@@ -1,0 +1,54 @@
+- name: Deploy a Node.JS app
+  hosts: server1
+  become: yes # Run tasks as root (sudo)
+
+  tasks:
+  - name: Ensure Node.js and npm is installed
+    yum:
+      name: 
+        - nodejs 
+        - npm
+        - git 
+      state: present
+
+  - name: Clone Node.JS app from Github
+    git:
+      repo: "https://github.com/sonam-niit/nodedockerapp.git"
+      dest: /opt/my-node-app
+  
+  - name: Install Dependencies
+    npm: 
+      path: /opt/my-node-app
+      production: yes
+
+  - name: Start app
+    shell: "nohup node /opt/my-node-app/index.js &"
+    args:
+      chdir: /opt/my-node-app
+
+  - name: Ensure firewalld is installed
+    yum:
+      name: firewalld
+      state: present
+
+  - name: enable firewalld
+    service:
+      name: firewalld
+      state: started
+      enabled: yes
+  - name: Open HTTP port 3000
+    firewalld:
+      port: 3000/tcp
+      permanent: yes
+      state: enabled
+      immediate: yes
+
+# also makesure port 3000 open from security groups as well
+# check from browser to access publicip:3000 or publicip:3000/news
+
+# manually do it from VM
+# sudo firewall-cmd --permanent --add-port=3000/tcp
+# sudo firewall-cmd --reload
+
+# sudo firewall-cmd --list-ports
+# manage internal security

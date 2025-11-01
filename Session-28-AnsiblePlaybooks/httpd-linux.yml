@@ -1,0 +1,50 @@
+- name: Install and start Apache Http Server on Amazon Linux
+  hosts: server1
+  become: yes # Run tasks as root (sudo)
+
+  tasks:
+  - name: Ensure Apache is installed
+    yum:
+      name: httpd
+      state: present
+
+  - name: Apache Service is started and enabled
+    service:
+      name: httpd
+      state: started
+      enabled: yes
+  
+  - name: Deploy Simple index.html page
+    copy:
+      dest: /var/www/html/index.html
+      content: |
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <title>Welcome</title>
+        </head>
+        <body>
+
+        <h1>Apache is running on Amazon linux!</h1>
+        <p>managed by Sonam Soni.</p>
+
+        </body>
+        </html>
+  
+  # extra to understand how we can configure firewalld
+  # - name: Ensure firewalld is installed
+  #   yum:
+  #     name: firewalld
+  #     state: present
+
+  # - name: enable firewalld
+  #   service:
+  #     name: firewalld
+  #     state: started
+  #     enabled: yes
+  # - name: Open HTTP port 80
+  #   firewalld:
+  #     port: 80/tcp
+  #     permanent: yes
+  #     state: enabled
+  #     immediate: yes
