@@ -1,0 +1,30 @@
+- name: install packages
+  hosts: all
+  become: true
+
+  tasks:
+  - name: update APT pakcages
+    apt:
+      update_cache: yes
+
+  - name: Install Git and Curl
+    apt:
+      name:
+        - git 
+        - curl
+
+  - name: Check Git version
+    command: git --version
+    register: git_version
+
+  - name: Show Git version
+    debug:
+      msg: "Git version {{ git_version.stdout }}"
+    
+  - name: Check Curl version
+    command: curl --version
+    register: curl_version
+
+  - name: Show Curl version
+    debug:
+      msg: "Curl version {{ curl_version.stdout }}"

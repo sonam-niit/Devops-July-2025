@@ -1,0 +1,37 @@
+- name: install and configure apache
+  hosts: server1
+  become: true
+
+  tasks:
+  - name: Install Apache packages
+    yum: 
+      name: httpd
+      state: present
+  - name: Copy Config File
+    copy:
+      src: files/httpd.conf
+      dest: /etc/httpd/conf/httpd.conf
+    notify: 
+      - Restart Apache
+
+  - name: Ensure Apache is Running
+    service:
+      name: httpd
+      state: started
+      enabled: yes
+
+  handlers:
+    - name: Restart Apache
+      service: 
+        name: httpd
+        state: restarted
+
+# when you run this playbook it will copy configuration file and then reload httpd server
+# now your apache is running on port 8080
+# to access in browser use publicip:8080
+# also make sure port 8080 open from firewall-cmd
+
+# sudo firewall-cmd --permanent --add-port=8080/tcp
+# sudo firewall-cmd --reload
+
+# sudo firewall-cmd --list-ports

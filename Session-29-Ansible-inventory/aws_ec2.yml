@@ -1,0 +1,39 @@
+# Dynamic Inventory
+plugin: amazon.aws.aws_ec2
+regions:
+  - us-east-1
+
+filters:
+  instance-state-name : running
+
+keyed_groups:
+  - key: tags.Name
+    prefix: "aws"
+    separator: "_"
+  - key: tags.Role
+  # for this you can add tag named Role with value webserver to group them
+
+compose:
+  ansible_host: public_ip_address
+  ansible_user: ubuntu
+  ansible_ssh_private_key_file: ~/.ssh/ansiblekey.pem
+
+
+# install boto3 and botocore
+# verify:  python3 -m pip show boto3
+# sudo apt update
+# sudo apt install python3-pip -y
+# pip3 install boto3 botocore
+
+# direct 
+# sudo apt install python3-boto3
+# sudo apt install python3-botocore
+# verify:  python3 -m pip show boto3
+
+# to generate inventory list
+#ansible-inventory -i aws_ec2.yml --graph
+#ansible-inventory -i aws_ec2.yml --list
+
+# ansible-playbook -i aws_ec2.yml playbook.yml -l aws_ubuntuvm
+# -l for limit to use mentioned host
+# for running playbook
