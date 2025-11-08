@@ -1,0 +1,25 @@
+---
+- name: Launch EC2 instance
+  hosts: localhost
+  connection: local 
+  gather_facts: false
+
+  tasks:
+    - name: start an instance with a public IP address
+      amazon.aws.ec2_instance:
+        name: "server1"
+        key_name: "ansible-key"
+        instance_type: t2.micro
+        security_group: default
+        image_id: ami-0ecb62995f68bb549
+        count: 1
+        tags:
+          Environment: Testing
+          Name: Server1
+        register: ec2_result
+    - name: Output Instance Details
+      debug:
+      var: ec2_result
+
+    # us-east-1 Linux imageid: ami-0157af9aea2eef346
+    # us-east-1 ubuntu imageid: ami-0ecb62995f68bb549
