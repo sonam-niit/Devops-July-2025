@@ -1,0 +1,5 @@
+---
+- hosts: aws1
+  become: true
+  roles:
+    - frontend

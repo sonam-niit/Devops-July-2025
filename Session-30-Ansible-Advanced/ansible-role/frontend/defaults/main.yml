@@ -1,0 +1,5 @@
+---
+# defaults file for frontend
+
+nginx_title: "Welcome to My Website"
+nginx_message: "Deploying this using ansible role"

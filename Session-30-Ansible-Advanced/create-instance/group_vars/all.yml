@@ -1,0 +1,5 @@
+key_name: ansiblekey
+ami_id: ami-0ecb62995f68bb549
+instance_type: t2.micro
+tag_name: dev-instance
+security_group_name: sonamvm

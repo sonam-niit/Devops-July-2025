@@ -1,0 +1,14 @@
+---
+# tasks file for frontend
+
+- name: Install nginx
+  apt: 
+    name: nginx
+    state: present
+    update_cache: yes
+
+- name: Copy Custom index.html
+  template:
+    src: index.html.j2
+    dest: /var/www/html/index.html
+  notify: restart nginx
