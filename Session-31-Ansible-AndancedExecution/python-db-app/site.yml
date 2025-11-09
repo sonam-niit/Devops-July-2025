@@ -1,0 +1,22 @@
+--- 
+- name: Deploy Database Server
+  hosts: db
+  become: true
+  roles: 
+    - db 
+
+- name: wait for DB Connect
+  hosts: db
+  become: true
+  tasks:
+    - name: wait for postgres to listen on port 5432
+      wait_for:
+        port: 5432
+        host: "localhost"
+        timeout: 60
+
+- name: Deploy Aplication Server
+  hosts: app
+  become: true
+  roles: 
+    - app 
