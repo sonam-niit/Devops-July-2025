@@ -1,7 +1,7 @@
 all:
   hosts:
     common-ec2:
-      ansible_host: ec2-34-201-64-203.compute-1.amazonaws.com
+      ansible_host: <public_ip or DNS>
       ansible_user: ubuntu
       ansible_ssh_private_key_file: ~/.ssh/ansiblekey.pem
 
