@@ -1,0 +1,44 @@
+services:
+  backend:
+    build: ./backend
+    container_name: backend
+    restart: always
+    ports:
+      - "3000:3000"
+    environment: 
+      DB_HOST: mysql
+      DB_USER: root
+      DB_PASSWORD: root
+      DB_NAME: appdb
+    depends_on:
+      - mysql
+    networks:
+      - app_network
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    restart: always
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    networks:
+      - app_network
+  mysql:
+    image: mysql:latest
+    container_name: mysql_container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root 
+      MYSQL_DATABASE: appdb
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - app_network
+volumes:
+  mysql_data:
+
+networks:
+  app_network:
