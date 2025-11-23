@@ -8,10 +8,10 @@ metadata:
     kubernetes.io/change-cause: updated version 1.16.1
 spec:
   replicas: 3
-  selector:
+  selector: #Identifies Pods the deployment should manage
     matchLabels:
       app: nginx
-  template:
+  template: # defines how new Pods will be created
     metadata:
       labels:
         app: nginx
