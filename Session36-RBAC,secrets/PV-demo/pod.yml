@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pvc-demo-pod
+spec:
+  containers:
+  - name: app
+    image: "registry.k8s.io/busybox"
+    command: ["/bin/sh", "-c"]
+    args: ["echo hello from PVC > /data/test.txt && sleep 3600"]
+    volumeMounts:
+    - name: storage-volume
+      mountPath: /data
+  volumes:
+  - name: storage-volume
+    persistentVolumeClaim:
+      claimName: my-pvc
