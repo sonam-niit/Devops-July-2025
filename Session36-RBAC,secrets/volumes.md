@@ -44,3 +44,25 @@ kubectl logs shared-volume-pod -c reader # -c container name
 - Pod uses PVC, PVC binds PV, PV connects to the actual Physical or cloud space
 
 - create pv.yml, pvc.yml, pod.yml
+
+```bash
+kubectl apply -f pv.yml
+kubectl apply -f pvc.yml
+kubectl apply -f pod.yml
+
+kubectl get pods
+kubectl describe pod pvc-demo-pod
+kubectl exec pvc-demo-pod -- cat /data/test.txt
+
+## Let's delete pod
+kubectl delete pod pvc-demo-pod
+## Let's create reader-pod to read volume data
+kubectl apply -f reader-pod.yml
+kubectl get pods
+kubectl logs pvc-reader-pod
+
+## Clean up Resources
+kubectl delete pod pvc-reader-pod
+kubectl delete pvc my-pvc
+kubectl delete pv my-pv
+```
