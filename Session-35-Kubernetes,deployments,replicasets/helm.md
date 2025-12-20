@@ -30,7 +30,7 @@ helm create myapp
 # Keep chart.yaml, values.yaml, deployment.yaml, service.yaml, _helpers.tpl
 
 # edit values.yaml, deployment.yaml, service.yaml as shown here
-helm install myapp ./myapp/
+helm install myapp ./myapp/ --debug
 # these will create all services, deployments based on config
 kubectl get deployment
 kubectl get pods

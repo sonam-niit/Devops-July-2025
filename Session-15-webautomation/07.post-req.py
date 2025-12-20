@@ -5,7 +5,7 @@ BASE_URL="https://jsonplaceholder.typicode.com/users"
 data={
     "name":"sonam",
     "username":"sonam123",
-    "email":"sonam@pw.live"
+    "email":"sonam-soni@gmail.com" #test-email
 }
 response=requests.post(BASE_URL,json=data)
 # i want to register with given data in json format to this API

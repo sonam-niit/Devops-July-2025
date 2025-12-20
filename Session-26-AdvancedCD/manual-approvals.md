@@ -73,7 +73,7 @@ pipeline {
         
         stage('Email for Approval') {
             steps {
-                mail to: 'sonam_skills@pw.live',
+                mail to: 'receivers_email_id',
                 subject: "Approval Needed for Production Deployment",
                 body: """
                 Build #${env.BUILD_NUMBER} is readdy for approval
