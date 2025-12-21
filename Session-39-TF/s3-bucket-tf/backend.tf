@@ -3,6 +3,9 @@ terraform {
     bucket = "sonamsoni-basket"
     key="terraform.tfstate"
     region = "us-east-1"
+    encrypt = true # to enable server side encryption
+    # because state file includes credentials and some secret info
+    dynamodb_table = "name-of-table-created-on-aws" #used for state locking
   }
 }
 
