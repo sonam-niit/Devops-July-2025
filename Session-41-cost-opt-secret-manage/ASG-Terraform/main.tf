@@ -1,3 +1,14 @@
+data "aws_vpc" "default" {
+    default = true
+}
+
+data "aws_subnets" "default" {
+    filter {
+      name = "vpc_id"
+      values = [ data.aws_vpc.default.id ]
+    }
+}
+
 # Launch template
 resource "aws_launch_template" "demo_lt" {
   name_prefix   = "demo_lt"
@@ -21,6 +32,7 @@ resource "aws_autoscaling_group" "demo_asg" {
   max_size = 2
   desired_capacity = 1
 
+  vpc_zone_identifier = data.aws_subnets.default.ids
   tag {
     key = "Name"
     value = "asg-demo-instance"
