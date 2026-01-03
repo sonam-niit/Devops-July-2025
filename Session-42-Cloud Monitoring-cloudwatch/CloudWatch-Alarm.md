@@ -55,7 +55,10 @@ stress --cpu 2 --timeout 300
 ![Stress](images/stress-load.png)
 
 - Now Again Check Cloudwatch Dashboard you Can see
+
 - Status changed from OK(1) to In Alarm(1)
+![In Alarm](images/InAlarm.png)
+
 - Also, check your email for Alarm Trigger
 
 ![Email Alarm](images/email-alarm.png)
